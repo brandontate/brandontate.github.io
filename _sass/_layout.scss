@@ -2,6 +2,7 @@
  * Site header
  */
 
+
 $sidebar-width: 14em;
 @media screen and (min-width: 3*$sidebar-width){
     // Sidebar (in our case is the header element)
@@ -10,14 +11,13 @@ $sidebar-width: 14em;
         position: fixed;
         width: $sidebar-width;
         height: 100%;
+    }
+    footer, .page-content {
+        margin-left: $sidebar-width;
+    }
+    // Content (in our case is the div.page-content)
+    // -> margin-left of x
 }
-footer, .page-content {
-    margin-left: $sidebar-width;
-}
-// Content (in our case is the div.page-content)
-// -> margin-left of x
-}
-
 
 header.site-header {
     background-color: grey;
@@ -41,42 +41,56 @@ header.site-header {
     &:visited {
         color: $grey-color-dark;
 }
-    &:hover {
-        background-color: yellow;
-        transition: background-color 500ms linear;
+&:hover {
+    background-color: yellow;
+    transition: background-color 500ms linear;
 }
-    
+
 }
 
 .resume-contact {
-  display: block;
+    display: block;
 }
 
 .resume {
-  padding: 10px;
-  background-color: FEFAE4;
-  h1 {
-      border-bottom-style: solid;
-      border-color: grey;
-      border-width: 1.5px;
+    font-family: 'Ubuntu', sans-serif;
+    box-shadow: 0px 0px 5px grey;
+    padding: 10px;
+    background-color: #FEFAE4;
+    h1 { 
+        margin-bottom: 4px;
 }
-  h2, article {
-      text-align: center;
+    h1, h2 {
+        font-weight: 700;
+        font-style: italic;
+        text-align: center;
+        border-bottom-style: solid;
+        border-color: grey;
+        border-width: 1.5px;
 }
-  #resume a:nth-child(n+3) {
-          &::before {
-              content: " | ";
+    article {
+        text-align: center;
 }
+    h3 {
+        font-weight: 500;
 }
+    .employer, .dates-employed, .employer-location {
+        font-weight: 500;
+        font-style: italic;
 }
 
+#resume a:nth-child(n+2) {
+    &::before {
+        content: " | ";
+}
+}
+}
 
 .resume-experience {
-  list-style-type: none;
+
+    list-style-type: none;
+    .job-function {
 }
-
-.experience-section {
-
 }
 
 .site-nav {
@@ -90,8 +104,8 @@ header.site-header {
         padding: 20px;
 
         &:hover {
-          background-color: yellow;
-          transition: background-color 500ms linear;
+            background-color: yellow;
+            transition: background-color 500ms linear;
 }
 }
 }
@@ -243,3 +257,38 @@ h4 {
 }
 }
 }
+
+/**
+*Mobile
+*/
+@include media-query($on-palm){
+    .wrapper {
+        padding: 0;
+}
+    .site-title {
+        text-align: center;
+        padding: 5px;
+}
+    .site-nav {
+        .page-link {
+            background-color: pink;
+            display: inline-block;
+        }
+}
+    .page-content, .site-footer {
+        padding: .5em;
+}
+}
+
+/**
+*Print
+*/
+
+@media print {
+    head, .site-header, .site-footer, .resume input {
+        display: none;
+}
+    .resume {
+}
+}
+
