@@ -4,12 +4,15 @@ layout: default
 permalink: /resume/
 ---
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href='css/print.css' rel='stylesheet' type='text/css' media='print'>
 <div class="resume">
-    <input type="button" value="&#9113;"  onclick="Print('.resume')" />
-    <h1>Brandon Tate's Resume</h1>
+  <div class="print-icon">
+    <img onclick="javascript:window.print()" src="icons/print_icon.png"/>
+  </div>
+    <h1>Brandon Tate</h1>
     <article id="resume">
-    <a href="mailto:blt900@gmail.com">BLT900@gmail.com</a>
-    <a href="tel:19316839769">931-683-9769</a> 
+    <a href="mailto:blt900@gmail.com" class="email">BLT900@gmail.com</a>
+    <a href="tel:19316839769" class="phone">931-683-9769</a>
     <h2>Work Experience</h2>
     </article>
 
@@ -55,6 +58,6 @@ permalink: /resume/
             <li>Troubleshooting computers</li>
         </ul>
         </li>
-    </ul> 
+    </ul>
     </section>
 </div>
